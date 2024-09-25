@@ -2,6 +2,7 @@ const express=require("express")
 const cors=require("cors");
 const app=express();
 const mongoose=require("mongoose");
+require('dotenv').config();
 
 const userRoute=require("./routes/users")
 const transferRoute=require("./routes/transfers")
@@ -13,7 +14,9 @@ const withdrawRoute=require("./routes/withdrawls")
 app.use(express.json())
 app.use(cors());
 
-mongoose.connect("mongodb+srv://bhanuprakash:43HWDTn6pW%23.2CN@cluster0.vcrwf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",{
+const Connection_URL = process.env.MONGO_URL;
+
+mongoose.connect(Connection_URL,{
     useNewUrlParser:true,
     useUnifiedTopology:true
 }).then(console.log("Connection succesful"))
