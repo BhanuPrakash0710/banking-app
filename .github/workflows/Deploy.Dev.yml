@@ -3,7 +3,7 @@ name: CI/CD for Frontend and Backend
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - 'frontend/**'    # Trigger frontend CI/CD only if frontend files change
       - 'backend/**'     # Trigger backend CI/CD only if backend files change
