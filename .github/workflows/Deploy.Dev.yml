@@ -1,0 +1,55 @@
+name: CI/CD for Frontend and Backend
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'frontend/**'    # Trigger frontend CI/CD only if frontend files change
+      - 'backend/**'     # Trigger backend CI/CD only if backend files change
+
+jobs:
+  backend:
+    if: contains(github.event.commits.*.modified, 'backend/')
+    runs-on: backend-self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20' # Specify the Node.js version
+
+      - name: Install Dependencies
+        run: |
+          cd backend
+          npm ci
+
+      - name: Build Backend
+        run: |
+          cd backend
+          npm run build
+
+  frontend:
+    if: contains(github.event.commits.*.modified, 'frontend/')
+    runs-on: frontend-self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Specify the Node.js version
+
+      - name: Install Dependencies
+        run: |
+          cd frontend
+          npm ci
+
+      - name: Build Frontend
+        run: |
+          cd frontend
+          npm run build
+
