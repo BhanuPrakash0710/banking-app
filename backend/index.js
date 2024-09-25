@@ -30,6 +30,7 @@ app.use("/api/auth",authRoute)
 app.use("/api/deposits",depositRoute)
 app.use("/api/withdrawls",withdrawRoute)
 
+//Listen
 app.listen(5000,()=>{
     console.log("Server running")
 })
