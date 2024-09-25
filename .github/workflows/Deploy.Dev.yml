@@ -22,10 +22,6 @@ jobs:
           cd backend
           npm ci
 
-      - name: Build Backend
-        run: |
-          cd backend
-          npm run build
 
   frontend:
     runs-on: frontend-self-hosted
