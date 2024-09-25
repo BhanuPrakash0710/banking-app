@@ -1,0 +1,15 @@
+*{
+    font-size: 18px;
+    
+}
+.heading{
+    margin:30px;
+    text-align: center;
+    font-weight: 700;
+    color: #125a74;
+}
+
+.historyCont{
+    margin-left: 50px;
+    margin-right: 50px;
+}

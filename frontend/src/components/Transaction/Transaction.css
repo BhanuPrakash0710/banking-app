@@ -1,0 +1,13 @@
+.transferBtn{
+    color: white;
+    background-color: #125a74;
+    border-radius: 10px;
+    border: transparent;
+    padding: 4px;
+    
+}
+
+.transferBtn:hover{
+    background-color: #0e455a;
+}
+

@@ -1,0 +1,71 @@
+.details{
+    font-size: 20px;
+    margin-left: 50px;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+
+.head{
+    margin-top: 30px;
+    margin-left: 50px;
+    color: #125a74;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.transferhead{
+    margin-top: 50px;
+    
+    color: #125a74;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.transferTo{
+    margin-top: 50px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.recipient{
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+}
+
+.submit{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.transferBtn{
+padding: 10px;
+}
+select{
+    margin-left: 7.5px;
+    width:300px;
+    height: 36px;
+}
+
+input{
+    font-family: 'Poppins', sans-serif;
+    margin-left: 20px;
+    width:300px;
+}
+
+label{
+    font-family: 'Poppins', sans-serif;
+}
+
+.prevTrans{
+    margin-left: 50px;
+}
+
+.DepWith{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.DepWith p{
+    text-align: center;
+}
