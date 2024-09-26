@@ -6,7 +6,7 @@ on:
 jobs:
   deploy-frontend:
     name: Deploy.Frontend.Dev
-    runs-on: frontend-self-hosted
+    runs-on: [self-hosted,frontend-self-hosted]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
