@@ -6,7 +6,7 @@ on:
 jobs:
   deploy-frontend:
     name: Deploy.Frontend.Dev
-    runs-on: [self-hosted,frontend-self-hosted]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
