@@ -1,29 +1,11 @@
-name: CI/CD for Frontend and Backend
+name: Deploy.Frontend
 
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
 
 jobs:
-  backend:
-    runs-on: backend-self-hosted
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20' # Specify the Node.js version
-
-      - name: Install Dependencies
-        run: |
-          cd backend
-          npm ci
-
-
-  frontend:
+  deploy-frontend:
+    name: Deploy.Frontend.Dev
     runs-on: frontend-self-hosted
     steps:
       - name: Checkout Code
