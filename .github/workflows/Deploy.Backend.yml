@@ -6,18 +6,21 @@ on:
 jobs:
   deploy-backend:
     name: Deploy.Backend.Dev
-    runs-on: backend-self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20' # Specify the Node.js version
-
-      - name: Install Dependencies
+      - name: Connect to EC2 and Deploy
+        env:
+          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          HOSTNAME: ${{secrets.SSH_HOST}}
+          USER_NAME: ${{secrets.USER_NAME}}
         run: |
-          cd backend
-          npm ci
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+          cd /home/ubuntu/banking-app/banking &&
+          npm ci &&
+          sudo pm2 stop index.js &&
+          sudo pm2 start index.js
 
