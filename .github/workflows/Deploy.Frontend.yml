@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy-frontend:
+  deploy-application:
     name: Deploy.Frontend.Dev
     runs-on: frontend-self-hosted
     steps:
